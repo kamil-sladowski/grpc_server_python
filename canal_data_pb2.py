@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='canal_data.proto',
   package='imageviewer',
   syntax='proto3',
-  serialized_pb=_b('\n\x10\x63\x61nal_data.proto\x12\x0bimageviewer\"q\n\x10ImageDataMessage\x12\x10\n\x08negative\x18\x01 \x01(\x08\x12\x0f\n\x07neutral\x18\x02 \x01(\x08\x12\x10\n\x08positive\x18\x03 \x01(\x08\x12\x14\n\x0c\x62lack_screen\x18\x04 \x01(\x08\x12\x12\n\nimage_name\x18\x05 \x01(\x0c\"K\n\x0cMouseMessage\x12\r\n\x05pos_x\x18\x01 \x01(\x0c\x12\r\n\x05pos_y\x18\x02 \x01(\x0c\x12\r\n\x05\x64\x65lta\x18\x03 \x01(\x0c\x12\x0e\n\x06\x61\x63tive\x18\x04 \x01(\x0c\"%\n\x12ServerConfirmation\x12\x0f\n\x07\x63onfirm\x18\x01 \x01(\x0c\x32\x65\n\x10SendingImageData\x12Q\n\rsendImageData\x12\x1d.imageviewer.ImageDataMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x32\x61\n\x10SendingMouseData\x12M\n\rsendMouseData\x12\x19.imageviewer.MouseMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x42:\n\x1cio.grpc.examples.imageviewerB\x12SendingImagesProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b('\n\x10\x63\x61nal_data.proto\x12\x0bimageviewer\"q\n\x10ImageDataMessage\x12\x10\n\x08negative\x18\x01 \x01(\x08\x12\x0f\n\x07neutral\x18\x02 \x01(\x08\x12\x10\n\x08positive\x18\x03 \x01(\x08\x12\x14\n\x0c\x62lack_screen\x18\x04 \x01(\x08\x12\x12\n\nimage_name\x18\x05 \x01(\x0c\"A\n\x0cMouseMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0e\n\x06move_x\x18\x02 \x01(\x05\x12\x0e\n\x06move_y\x18\x03 \x01(\x05\"%\n\x12ServerConfirmation\x12\x0f\n\x07\x63onfirm\x18\x01 \x01(\x0c\x32\x65\n\x10SendingImageData\x12Q\n\rsendImageData\x12\x1d.imageviewer.ImageDataMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x32\x61\n\x10SendingMouseData\x12M\n\rsendMouseData\x12\x19.imageviewer.MouseMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x42:\n\x1cio.grpc.examples.imageviewerB\x12SendingImagesProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
@@ -92,30 +92,23 @@ _MOUSEMESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pos_x', full_name='imageviewer.MouseMessage.pos_x', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      name='timestamp', full_name='imageviewer.MouseMessage.timestamp', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pos_y', full_name='imageviewer.MouseMessage.pos_y', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      name='move_x', full_name='imageviewer.MouseMessage.move_x', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='delta', full_name='imageviewer.MouseMessage.delta', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='active', full_name='imageviewer.MouseMessage.active', index=3,
-      number=4, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      name='move_y', full_name='imageviewer.MouseMessage.move_y', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -132,7 +125,7 @@ _MOUSEMESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=148,
-  serialized_end=223,
+  serialized_end=213,
 )
 
 
@@ -162,8 +155,8 @@ _SERVERCONFIRMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=225,
-  serialized_end=262,
+  serialized_start=215,
+  serialized_end=252,
 )
 
 DESCRIPTOR.message_types_by_name['ImageDataMessage'] = _IMAGEDATAMESSAGE
@@ -202,8 +195,8 @@ _SENDINGIMAGEDATA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=264,
-  serialized_end=365,
+  serialized_start=254,
+  serialized_end=355,
   methods=[
   _descriptor.MethodDescriptor(
     name='sendImageData',
@@ -226,8 +219,8 @@ _SENDINGMOUSEDATA = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   options=None,
-  serialized_start=367,
-  serialized_end=464,
+  serialized_start=357,
+  serialized_end=454,
   methods=[
   _descriptor.MethodDescriptor(
     name='sendMouseData',
