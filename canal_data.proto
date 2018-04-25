@@ -24,10 +24,15 @@ message ImageDataMessage {
 }
 
 message MouseMessage {
-    bytes pos_x = 1;
-    bytes pos_y = 2;
-    bytes delta = 3;
-    bytes active = 4;
+    int64 timestamp = 1;
+    int32 move_x = 2;
+    int32 move_y = 3;
+}
+
+message MouseButtonMessage {
+    int64 timestamp = 1;
+    int32 move_x = 2;
+    int32 move_y = 3;
 }
 
 message ServerConfirmation {
