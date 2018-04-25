@@ -19,11 +19,11 @@ class ImageDataSample:
 
 
 class MouseDataSample:
-    def __init__(self, pos_x, pos_y, delta, active):
-        self.pos_x = pos_x
-        self.pos_y = pos_y
-        self.delta = delta
-        self.active = active
+    def __init__(self, move_x, move_y, timestamp):
+        self.move_x = move_x
+        self.move_y = move_y
+        self.timestamp = timestamp
+
 
 
 class SendingImageData(canal_data_pb2_grpc.SendingImageDataServicer):
@@ -52,18 +52,20 @@ class SendingMouseData(canal_data_pb2_grpc.SendingMouseDataServicer):
         self.mouse_data_sample = mouse_data_sample
 
     def sendMouseData(self, request, context):
-        self.mouse_data_sample.pos_x = request.pos_x
-        self.mouse_data_sample.pos_y = request.pos_y
-        self.mouse_data_sample.delta = request.delta
-        self.mouse_data_sample.active = request.active
+        self.mouse_data_sample.move_x = request.move_x
+        self.mouse_data_sample.move_y = request.move_y
+        self.mouse_data_sample.timestamp = request.timestamp
         print("[MOUSE - got data]")
+        print("[MOUSE DATA]: timestamp: ", self.mouse_data_sample.timestamp)
+        print("[MOUSE DATA]: x: ", self.mouse_data_sample.move_x)
+        print("[MOUSE DATA]: y: ", self.mouse_data_sample.move_y)
 
         return canal_data_pb2.ServerConfirmation(confirm=b"1")
 
 
 def serve():
     image_sample = ImageDataSample(False, False, False, False, "noName")
-    mouse_sample = MouseDataSample(0, 0, 0, 0)
+    mouse_sample = MouseDataSample(0, 0, 0)
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     canal_data_pb2_grpc.add_SendingImageDataServicer_to_server(SendingImageData(image_sample), server)
     canal_data_pb2_grpc.add_SendingMouseDataServicer_to_server(SendingMouseData(mouse_sample), server)
@@ -78,3 +80,4 @@ def serve():
 
 if __name__ == '__main__':
     serve()
+
