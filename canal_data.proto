@@ -15,6 +15,11 @@ service SendingMouseData {
     rpc sendMouseData (MouseMessage) returns (ServerConfirmation) {}
 }
 
+service SendingQuakeEvent {
+    rpc sendQuakeEventData (QuakeEventMessage) returns (ServerConfirmation) {}
+    rpc sendInjuryData (InjuryDataMessage) returns (ServerConfirmation) {}
+}
+
 message ImageDataMessage {
     bool negative = 1;
     bool neutral = 2;
@@ -33,6 +38,19 @@ message MouseButtonMessage {
     int64 timestamp = 1;
     int32 move_x = 2;
     int32 move_y = 3;
+}
+
+message InjuryDataMessage {
+    int64 timestamp = 1;
+    int32 injury_id = 2;
+    int32 player_id = 3;
+	int32 new_hp_value = 4;
+}
+
+message QuakeEventMessage {
+    int64 timestamp = 1;
+    int32 event_id = 2;
+    int32 player_id = 3;
 }
 
 message ServerConfirmation {
