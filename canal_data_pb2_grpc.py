@@ -15,7 +15,7 @@ class SendingImageDataStub(object):
       channel: A grpc.Channel.
     """
     self.sendImageData = channel.unary_unary(
-        '/imageviewer.SendingImageData/sendImageData',
+        '/grpccommunication.SendingImageData/sendImageData',
         request_serializer=canal__data__pb2.ImageDataMessage.SerializeToString,
         response_deserializer=canal__data__pb2.ServerConfirmation.FromString,
         )
@@ -42,7 +42,7 @@ def add_SendingImageDataServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'imageviewer.SendingImageData', rpc_method_handlers)
+      'grpccommunication.SendingImageData', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -57,7 +57,7 @@ class SendingMouseDataStub(object):
       channel: A grpc.Channel.
     """
     self.sendMouseData = channel.unary_unary(
-        '/imageviewer.SendingMouseData/sendMouseData',
+        '/grpccommunication.SendingMouseData/sendMouseData',
         request_serializer=canal__data__pb2.MouseMessage.SerializeToString,
         response_deserializer=canal__data__pb2.ServerConfirmation.FromString,
         )
@@ -84,7 +84,7 @@ def add_SendingMouseDataServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'imageviewer.SendingMouseData', rpc_method_handlers)
+      'grpccommunication.SendingMouseData', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -99,12 +99,12 @@ class SendingQuakeEventStub(object):
       channel: A grpc.Channel.
     """
     self.sendQuakeEventData = channel.unary_unary(
-        '/imageviewer.SendingQuakeEvent/sendQuakeEventData',
+        '/grpccommunication.SendingQuakeEvent/sendQuakeEventData',
         request_serializer=canal__data__pb2.QuakeEventMessage.SerializeToString,
         response_deserializer=canal__data__pb2.ServerConfirmation.FromString,
         )
     self.sendInjuryData = channel.unary_unary(
-        '/imageviewer.SendingQuakeEvent/sendInjuryData',
+        '/grpccommunication.SendingQuakeEvent/sendInjuryData',
         request_serializer=canal__data__pb2.InjuryDataMessage.SerializeToString,
         response_deserializer=canal__data__pb2.ServerConfirmation.FromString,
         )
@@ -143,5 +143,5 @@ def add_SendingQuakeEventServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'imageviewer.SendingQuakeEvent', rpc_method_handlers)
+      'grpccommunication.SendingQuakeEvent', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

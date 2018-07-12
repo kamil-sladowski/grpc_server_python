@@ -5,7 +5,7 @@ option java_package = "io.grpc.examples.imageviewer";
 option java_outer_classname = "SendingImagesProto";
 option objc_class_prefix = "HLW";
 
-package imageviewer;
+package grpccommunication;
 
 service SendingImageData {
     rpc sendImageData (ImageDataMessage) returns (ServerConfirmation) {}
