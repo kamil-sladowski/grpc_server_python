@@ -17,9 +17,9 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='canal_data.proto',
-  package='grpccommunication',
+  package='imageviewer',
   syntax='proto3',
-  serialized_pb=_b('\n\x10\x63\x61nal_data.proto\x12\x11grpccommunication\"q\n\x10ImageDataMessage\x12\x10\n\x08negative\x18\x01 \x01(\x08\x12\x0f\n\x07neutral\x18\x02 \x01(\x08\x12\x10\n\x08positive\x18\x03 \x01(\x08\x12\x14\n\x0c\x62lack_screen\x18\x04 \x01(\x08\x12\x12\n\nimage_name\x18\x05 \x01(\x0c\"A\n\x0cMouseMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0e\n\x06move_x\x18\x02 \x01(\x05\x12\x0e\n\x06move_y\x18\x03 \x01(\x05\"G\n\x12MouseButtonMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0e\n\x06move_x\x18\x02 \x01(\x05\x12\x0e\n\x06move_y\x18\x03 \x01(\x05\"b\n\x11InjuryDataMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x11\n\tinjury_id\x18\x02 \x01(\x05\x12\x11\n\tplayer_id\x18\x03 \x01(\x05\x12\x14\n\x0cnew_hp_value\x18\x04 \x01(\x05\"K\n\x11QuakeEventMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\x05\x12\x11\n\tplayer_id\x18\x03 \x01(\x05\"%\n\x12ServerConfirmation\x12\x0f\n\x07\x63onfirm\x18\x01 \x01(\x0c\x32q\n\x10SendingImageData\x12]\n\rsendImageData\x12#.grpccommunication.ImageDataMessage\x1a%.grpccommunication.ServerConfirmation\"\x00\x32m\n\x10SendingMouseData\x12Y\n\rsendMouseData\x12\x1f.grpccommunication.MouseMessage\x1a%.grpccommunication.ServerConfirmation\"\x00\x32\xd9\x01\n\x11SendingQuakeEvent\x12\x63\n\x12sendQuakeEventData\x12$.grpccommunication.QuakeEventMessage\x1a%.grpccommunication.ServerConfirmation\"\x00\x12_\n\x0esendInjuryData\x12$.grpccommunication.InjuryDataMessage\x1a%.grpccommunication.ServerConfirmation\"\x00\x42:\n\x1cio.grpc.examples.imageviewerB\x12SendingImagesProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+  serialized_pb=_b('\n\x10\x63\x61nal_data.proto\x12\x0bimageviewer\"q\n\x10ImageDataMessage\x12\x10\n\x08negative\x18\x01 \x01(\x08\x12\x0f\n\x07neutral\x18\x02 \x01(\x08\x12\x10\n\x08positive\x18\x03 \x01(\x08\x12\x14\n\x0c\x62lack_screen\x18\x04 \x01(\x08\x12\x12\n\nimage_name\x18\x05 \x01(\x0c\"A\n\x0cMouseMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0e\n\x06move_x\x18\x02 \x01(\x05\x12\x0e\n\x06move_y\x18\x03 \x01(\x05\"G\n\x12MouseButtonMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0e\n\x06move_x\x18\x02 \x01(\x05\x12\x0e\n\x06move_y\x18\x03 \x01(\x05\"b\n\x11InjuryDataMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x11\n\tinjury_id\x18\x02 \x01(\x05\x12\x11\n\tplayer_id\x18\x03 \x01(\x05\x12\x14\n\x0cnew_hp_value\x18\x04 \x01(\x05\"K\n\x11QuakeEventMessage\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\x05\x12\x11\n\tplayer_id\x18\x03 \x01(\x05\"%\n\x12ServerConfirmation\x12\x0f\n\x07\x63onfirm\x18\x01 \x01(\x0c\x32\x65\n\x10SendingImageData\x12Q\n\rsendImageData\x12\x1d.imageviewer.ImageDataMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x32\x61\n\x10SendingMouseData\x12M\n\rsendMouseData\x12\x19.imageviewer.MouseMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x32\xc1\x01\n\x11SendingQuakeEvent\x12W\n\x12sendQuakeEventData\x12\x1e.imageviewer.QuakeEventMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x12S\n\x0esendInjuryData\x12\x1e.imageviewer.InjuryDataMessage\x1a\x1f.imageviewer.ServerConfirmation\"\x00\x42:\n\x1cio.grpc.examples.imageviewerB\x12SendingImagesProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 )
 
 
@@ -27,41 +27,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _IMAGEDATAMESSAGE = _descriptor.Descriptor(
   name='ImageDataMessage',
-  full_name='grpccommunication.ImageDataMessage',
+  full_name='imageviewer.ImageDataMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='negative', full_name='grpccommunication.ImageDataMessage.negative', index=0,
+      name='negative', full_name='imageviewer.ImageDataMessage.negative', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='neutral', full_name='grpccommunication.ImageDataMessage.neutral', index=1,
+      name='neutral', full_name='imageviewer.ImageDataMessage.neutral', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='positive', full_name='grpccommunication.ImageDataMessage.positive', index=2,
+      name='positive', full_name='imageviewer.ImageDataMessage.positive', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='black_screen', full_name='grpccommunication.ImageDataMessage.black_screen', index=3,
+      name='black_screen', full_name='imageviewer.ImageDataMessage.black_screen', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='image_name', full_name='grpccommunication.ImageDataMessage.image_name', index=4,
+      name='image_name', full_name='imageviewer.ImageDataMessage.image_name', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -79,34 +79,34 @@ _IMAGEDATAMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39,
-  serialized_end=152,
+  serialized_start=33,
+  serialized_end=146,
 )
 
 
 _MOUSEMESSAGE = _descriptor.Descriptor(
   name='MouseMessage',
-  full_name='grpccommunication.MouseMessage',
+  full_name='imageviewer.MouseMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='grpccommunication.MouseMessage.timestamp', index=0,
+      name='timestamp', full_name='imageviewer.MouseMessage.timestamp', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='move_x', full_name='grpccommunication.MouseMessage.move_x', index=1,
+      name='move_x', full_name='imageviewer.MouseMessage.move_x', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='move_y', full_name='grpccommunication.MouseMessage.move_y', index=2,
+      name='move_y', full_name='imageviewer.MouseMessage.move_y', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -124,34 +124,34 @@ _MOUSEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=154,
-  serialized_end=219,
+  serialized_start=148,
+  serialized_end=213,
 )
 
 
 _MOUSEBUTTONMESSAGE = _descriptor.Descriptor(
   name='MouseButtonMessage',
-  full_name='grpccommunication.MouseButtonMessage',
+  full_name='imageviewer.MouseButtonMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='grpccommunication.MouseButtonMessage.timestamp', index=0,
+      name='timestamp', full_name='imageviewer.MouseButtonMessage.timestamp', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='move_x', full_name='grpccommunication.MouseButtonMessage.move_x', index=1,
+      name='move_x', full_name='imageviewer.MouseButtonMessage.move_x', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='move_y', full_name='grpccommunication.MouseButtonMessage.move_y', index=2,
+      name='move_y', full_name='imageviewer.MouseButtonMessage.move_y', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -169,41 +169,41 @@ _MOUSEBUTTONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=221,
-  serialized_end=292,
+  serialized_start=215,
+  serialized_end=286,
 )
 
 
 _INJURYDATAMESSAGE = _descriptor.Descriptor(
   name='InjuryDataMessage',
-  full_name='grpccommunication.InjuryDataMessage',
+  full_name='imageviewer.InjuryDataMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='grpccommunication.InjuryDataMessage.timestamp', index=0,
+      name='timestamp', full_name='imageviewer.InjuryDataMessage.timestamp', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='injury_id', full_name='grpccommunication.InjuryDataMessage.injury_id', index=1,
+      name='injury_id', full_name='imageviewer.InjuryDataMessage.injury_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='player_id', full_name='grpccommunication.InjuryDataMessage.player_id', index=2,
+      name='player_id', full_name='imageviewer.InjuryDataMessage.player_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='new_hp_value', full_name='grpccommunication.InjuryDataMessage.new_hp_value', index=3,
+      name='new_hp_value', full_name='imageviewer.InjuryDataMessage.new_hp_value', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -221,34 +221,34 @@ _INJURYDATAMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=294,
-  serialized_end=392,
+  serialized_start=288,
+  serialized_end=386,
 )
 
 
 _QUAKEEVENTMESSAGE = _descriptor.Descriptor(
   name='QuakeEventMessage',
-  full_name='grpccommunication.QuakeEventMessage',
+  full_name='imageviewer.QuakeEventMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='grpccommunication.QuakeEventMessage.timestamp', index=0,
+      name='timestamp', full_name='imageviewer.QuakeEventMessage.timestamp', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='event_id', full_name='grpccommunication.QuakeEventMessage.event_id', index=1,
+      name='event_id', full_name='imageviewer.QuakeEventMessage.event_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='player_id', full_name='grpccommunication.QuakeEventMessage.player_id', index=2,
+      name='player_id', full_name='imageviewer.QuakeEventMessage.player_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -266,20 +266,20 @@ _QUAKEEVENTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=394,
-  serialized_end=469,
+  serialized_start=388,
+  serialized_end=463,
 )
 
 
 _SERVERCONFIRMATION = _descriptor.Descriptor(
   name='ServerConfirmation',
-  full_name='grpccommunication.ServerConfirmation',
+  full_name='imageviewer.ServerConfirmation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='confirm', full_name='grpccommunication.ServerConfirmation.confirm', index=0,
+      name='confirm', full_name='imageviewer.ServerConfirmation.confirm', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -297,8 +297,8 @@ _SERVERCONFIRMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=508,
+  serialized_start=465,
+  serialized_end=502,
 )
 
 DESCRIPTOR.message_types_by_name['ImageDataMessage'] = _IMAGEDATAMESSAGE
@@ -312,42 +312,42 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 ImageDataMessage = _reflection.GeneratedProtocolMessageType('ImageDataMessage', (_message.Message,), dict(
   DESCRIPTOR = _IMAGEDATAMESSAGE,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.ImageDataMessage)
+  # @@protoc_insertion_point(class_scope:imageviewer.ImageDataMessage)
   ))
 _sym_db.RegisterMessage(ImageDataMessage)
 
 MouseMessage = _reflection.GeneratedProtocolMessageType('MouseMessage', (_message.Message,), dict(
   DESCRIPTOR = _MOUSEMESSAGE,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.MouseMessage)
+  # @@protoc_insertion_point(class_scope:imageviewer.MouseMessage)
   ))
 _sym_db.RegisterMessage(MouseMessage)
 
 MouseButtonMessage = _reflection.GeneratedProtocolMessageType('MouseButtonMessage', (_message.Message,), dict(
   DESCRIPTOR = _MOUSEBUTTONMESSAGE,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.MouseButtonMessage)
+  # @@protoc_insertion_point(class_scope:imageviewer.MouseButtonMessage)
   ))
 _sym_db.RegisterMessage(MouseButtonMessage)
 
 InjuryDataMessage = _reflection.GeneratedProtocolMessageType('InjuryDataMessage', (_message.Message,), dict(
   DESCRIPTOR = _INJURYDATAMESSAGE,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.InjuryDataMessage)
+  # @@protoc_insertion_point(class_scope:imageviewer.InjuryDataMessage)
   ))
 _sym_db.RegisterMessage(InjuryDataMessage)
 
 QuakeEventMessage = _reflection.GeneratedProtocolMessageType('QuakeEventMessage', (_message.Message,), dict(
   DESCRIPTOR = _QUAKEEVENTMESSAGE,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.QuakeEventMessage)
+  # @@protoc_insertion_point(class_scope:imageviewer.QuakeEventMessage)
   ))
 _sym_db.RegisterMessage(QuakeEventMessage)
 
 ServerConfirmation = _reflection.GeneratedProtocolMessageType('ServerConfirmation', (_message.Message,), dict(
   DESCRIPTOR = _SERVERCONFIRMATION,
   __module__ = 'canal_data_pb2'
-  # @@protoc_insertion_point(class_scope:grpccommunication.ServerConfirmation)
+  # @@protoc_insertion_point(class_scope:imageviewer.ServerConfirmation)
   ))
 _sym_db.RegisterMessage(ServerConfirmation)
 
@@ -357,16 +357,16 @@ DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b
 
 _SENDINGIMAGEDATA = _descriptor.ServiceDescriptor(
   name='SendingImageData',
-  full_name='grpccommunication.SendingImageData',
+  full_name='imageviewer.SendingImageData',
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=510,
-  serialized_end=623,
+  serialized_start=504,
+  serialized_end=605,
   methods=[
   _descriptor.MethodDescriptor(
     name='sendImageData',
-    full_name='grpccommunication.SendingImageData.sendImageData',
+    full_name='imageviewer.SendingImageData.sendImageData',
     index=0,
     containing_service=None,
     input_type=_IMAGEDATAMESSAGE,
@@ -381,16 +381,16 @@ DESCRIPTOR.services_by_name['SendingImageData'] = _SENDINGIMAGEDATA
 
 _SENDINGMOUSEDATA = _descriptor.ServiceDescriptor(
   name='SendingMouseData',
-  full_name='grpccommunication.SendingMouseData',
+  full_name='imageviewer.SendingMouseData',
   file=DESCRIPTOR,
   index=1,
   options=None,
-  serialized_start=625,
-  serialized_end=734,
+  serialized_start=607,
+  serialized_end=704,
   methods=[
   _descriptor.MethodDescriptor(
     name='sendMouseData',
-    full_name='grpccommunication.SendingMouseData.sendMouseData',
+    full_name='imageviewer.SendingMouseData.sendMouseData',
     index=0,
     containing_service=None,
     input_type=_MOUSEMESSAGE,
@@ -405,16 +405,16 @@ DESCRIPTOR.services_by_name['SendingMouseData'] = _SENDINGMOUSEDATA
 
 _SENDINGQUAKEEVENT = _descriptor.ServiceDescriptor(
   name='SendingQuakeEvent',
-  full_name='grpccommunication.SendingQuakeEvent',
+  full_name='imageviewer.SendingQuakeEvent',
   file=DESCRIPTOR,
   index=2,
   options=None,
-  serialized_start=737,
-  serialized_end=954,
+  serialized_start=707,
+  serialized_end=900,
   methods=[
   _descriptor.MethodDescriptor(
     name='sendQuakeEventData',
-    full_name='grpccommunication.SendingQuakeEvent.sendQuakeEventData',
+    full_name='imageviewer.SendingQuakeEvent.sendQuakeEventData',
     index=0,
     containing_service=None,
     input_type=_QUAKEEVENTMESSAGE,
@@ -423,7 +423,7 @@ _SENDINGQUAKEEVENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='sendInjuryData',
-    full_name='grpccommunication.SendingQuakeEvent.sendInjuryData',
+    full_name='imageviewer.SendingQuakeEvent.sendInjuryData',
     index=1,
     containing_service=None,
     input_type=_INJURYDATAMESSAGE,
